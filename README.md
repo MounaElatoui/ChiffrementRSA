@@ -1,13 +1,20 @@
 Fonctionnalités
 ✅ Génération automatique de clés RSA (p, q → n, φ(n), e, d)
+
 ✅ Chiffrement texte → nombres (A-Z + espaces)
+
 ✅ Copier-coller du texte chiffré
+
 ✅ Déchiffrement parfait
+
 ✅ Validation automatique (nombres premiers, coprime)
+
 ✅ Interface responsive (mobile/desktop)
+
 ✅ Design moderne avec animations
 
 ÉTAPE 1 : Nombres premiers
+
 │
 ├─ p = 61 ✓
 ├─ q = 53 ✓
