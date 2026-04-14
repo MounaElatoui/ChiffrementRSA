@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA Texte - Chiffrement/Déchiffrement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 RSA Texte Complet</h1>
+            <p>Chiffrez votre message → Copiez le texte chiffré → Déchiffrez-le !</p>
+        </div>
+
+        <div class="main-content">
+            <!-- PARAMÈTRES RSA -->
+            <div class="input-section">
+                <h2>⚙️ Générer vos clés RSA</h2>
+                
+                <div class="input-group">
+                    <label for="p">p (nombre premier):</label>
+                    <input type="number" id="p" value="61" placeholder="Ex: 61">
+                </div>
+                
+                <div class="input-group">
+                    <label for="q">q (nombre premier):</label>
+                    <input type="number" id="q" value="53" placeholder="Ex: 53">
+                </div>
+                
+                <div class="input-group">
+                    <label for="e">e (exposant public):</label>
+                    <input type="number" id="e" value="17" placeholder="Ex: 17">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-generer" onclick="generateKeys()">🔑 Générer Clés</button>
+                    <button class="btn-clear" onclick="clearAll()">🗑️ Tout Effacer</button>
+                </div>
+
+                <div id="status"></div>
+                <div id="keysDisplay" style="display: none;"></div>
+            </div>
+
+            <!-- CHIFFREMENT -->
+            <div class="input-section">
+                <h2>🔒 Chiffrement</h2>
+                
+                <div class="input-group">
+                    <label for="messageClair">Votre message (texte):</label>
+                    <textarea id="messageClair" placeholder="Entrez votre message ici... ex: BONJOUR">BONJOUR</textarea>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-chiffrer" id="btnChiffrer" onclick="chiffrerMessage()" disabled>🔐 CHIFFRER</button>
+                </div>
+
+                <div id="resultChiffre"></div>
+            </div>
+
+            <!-- DÉCHIFFREMENT -->
+            <div class="input-section">
+                <h2>🔓 Déchiffrement</h2>
+                
+                <div class="input-group">
+                    <label for="messageChiffre">Message chiffré (copiez-collez ici):</label>
+                    <textarea id="messageChiffre" placeholder="Collez le texte chiffré ici..."></textarea>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-dechiffrer" id="btnDechiffrer" onclick="dechiffrerMessage()" disabled>🔓 DÉCHIFFRER</button>
+                </div>
+
+                <div id="resultDechiffre"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
