@@ -1,7 +1,5 @@
 let rsaKeys = null;
 
-// Alphabet conforme à l'exercice du cours (page 4)
-// Index: 0=espace, 1=a, 2=b, ..., 26=z, 27=., 28=., 29=., 30=!, 31=?, 32=-
 const ALPHABET = ' abcdefghijklmnopqrstuvwxyz...!?-';
 const ALPHABET_SIZE = ALPHABET.length;
 
@@ -105,7 +103,7 @@ function generateKeys() {
     }
     
     if (!isPrime(p) || !isPrime(q)) {
-        status.innerHTML = '<div class="status error">❌ p et q doivent être des nombres premiers ! (cf. cours §2.1)</div>';
+        status.innerHTML = '<div class="status error">❌ p et q doivent être des nombres premiers ! (cf. cours 2.1)</div>';
         return;
     }
     if (p === q) {
@@ -121,7 +119,7 @@ function generateKeys() {
 
     const phi = (p - 1) * (q - 1);
     if (e <= 1 || e >= phi || gcd(e, phi) !== 1) {
-        status.innerHTML = `<div class="status error">❌ e = ${e} invalide ! Il doit être premier avec φ(n)=${phi}. (cf. cours §2.1)</div>`;
+        status.innerHTML = `<div class="status error">❌ e = ${e} invalide ! Il doit être premier avec φ(n)=${phi}. (cf. cours 2.1)</div>`;
         return;
     }
 
@@ -148,7 +146,7 @@ function generateKeys() {
     document.getElementById('btnChiffrer').disabled = false;
     document.getElementById('btnDechiffrer').disabled = false;
 
-    status.innerHTML = '<div class="status success">✅ Clés générées avec succès ! Conformément au cours RSA (§2.1 et §2.2)</div>';
+    status.innerHTML = '<div class="status success">✅ Clés générées avec succès ! Conformément au cours RSA (2.1 et 2.2)</div>';
 }
 
 function chiffrerMessage() {
