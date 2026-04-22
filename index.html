@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSA Texte - Chiffrement/Déchiffrement</title>
+    <title>RSA - Chiffrement et Déchiffrement</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🔐 RSA Texte Complet</h1>
-            <p>Chiffrez votre message → Copiez le texte chiffré → Déchiffrez-le !</p>
+            <h1>🔐 RSA - Cryptographie à Clé Publique</h1>
+            <p>Conforme au cours : Chiffrement C = M<sup>e</sup> mod n | Déchiffrement M = C<sup>d</sup> mod n</p>
         </div>
 
         <div class="main-content">
             <!-- PARAMÈTRES RSA -->
             <div class="input-section">
-                <h2>⚙️ Générer vos clés RSA</h2>
+                <h2>⚙️ 1. Génération des clés RSA</h2>
+                <p class="section-desc">Choisissez deux nombres premiers p et q, puis un exposant e</p>
                 
                 <div class="input-group">
-                    <label for="p">p (nombre premier):</label>
-                    <input type="number" id="p" value="61" placeholder="Ex: 61">
+                    <label for="p">📌 p (nombre premier) :</label>
+                    <input type="number" id="p" value="5" placeholder="Ex: 5, 11, 17, 61">
                 </div>
                 
                 <div class="input-group">
-                    <label for="q">q (nombre premier):</label>
-                    <input type="number" id="q" value="53" placeholder="Ex: 53">
+                    <label for="q">📌 q (nombre premier) :</label>
+                    <input type="number" id="q" value="11" placeholder="Ex: 5, 11, 17, 53">
                 </div>
                 
                 <div class="input-group">
-                    <label for="e">e (exposant public):</label>
-                    <input type="number" id="e" value="17" placeholder="Ex: 17">
+                    <label for="e">🔑 e (exposant public) :</label>
+                    <input type="number" id="e" value="7" placeholder="Ex: 7, 17, 65537">
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn-generer" onclick="generateKeys()">🔑 Générer Clés</button>
-                    <button class="btn-clear" onclick="clearAll()">🗑️ Tout Effacer</button>
+                    <button class="btn-generer" onclick="generateKeys()">🎯 Générer les clés</button>
+                    <button class="btn-clear" onclick="clearAll()">🗑️ Tout réinitialiser</button>
                 </div>
 
                 <div id="status"></div>
@@ -44,15 +45,16 @@
 
             <!-- CHIFFREMENT -->
             <div class="input-section">
-                <h2>🔒 Chiffrement</h2>
+                <h2>🔒 2. Chiffrement</h2>
+                <p class="section-desc">Entrez votre message en clair (lettres, espaces, ponctuation)</p>
                 
                 <div class="input-group">
-                    <label for="messageClair">Votre message (texte):</label>
-                    <textarea id="messageClair" placeholder="Entrez votre message ici... ex: BONJOUR">BONJOUR</textarea>
+                    <label for="messageClair">📝 Message en clair :</label>
+                    <textarea id="messageClair" placeholder="Exemple: edith, bonjour, hello world...">edith</textarea>
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn-chiffrer" id="btnChiffrer" onclick="chiffrerMessage()" disabled>🔐 CHIFFRER</button>
+                    <button class="btn-chiffrer" id="btnChiffrer" onclick="chiffrerMessage()" disabled>🔐 Chiffrer le message</button>
                 </div>
 
                 <div id="resultChiffre"></div>
@@ -60,19 +62,25 @@
 
             <!-- DÉCHIFFREMENT -->
             <div class="input-section">
-                <h2>🔓 Déchiffrement</h2>
+                <h2>🔓 3. Déchiffrement</h2>
+                <p class="section-desc">Collez le message chiffré reçu</p>
                 
                 <div class="input-group">
-                    <label for="messageChiffre">Message chiffré (copiez-collez ici):</label>
-                    <textarea id="messageChiffre" placeholder="Collez le texte chiffré ici..."></textarea>
+                    <label for="messageChiffre">📨 Message chiffré :</label>
+                    <textarea id="messageChiffre" placeholder="Collez ici le message chiffré..."></textarea>
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn-dechiffrer" id="btnDechiffrer" onclick="dechiffrerMessage()" disabled>🔓 DÉCHIFFRER</button>
+                    <button class="btn-dechiffrer" id="btnDechiffrer" onclick="dechiffrerMessage()" disabled>🔓 Déchiffrer le message</button>
                 </div>
 
                 <div id="resultDechiffre"></div>
             </div>
+        </div>
+        
+        <div class="footer">
+            <p>📚 RSA - Rivest, Shamir, Adleman (1978) | Basé sur la difficulté de factorisation de grands nombres</p>
+            <p>Formules : <strong>C = M^e mod n</strong> | <strong>M = C^d mod n</strong> | <strong>e × d ≡ 1 mod φ(n)</strong> avec φ(n) = (p-1)×(q-1)</p>
         </div>
     </div>
 
