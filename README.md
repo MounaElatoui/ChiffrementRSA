@@ -67,8 +67,9 @@ CLÉS FINALES :
 │
 ├─ PUBLIQUE : (17, 3233) ← Tout le monde
 
-└─ PRIVÉE   : (2753, 3233) ← SEUL Bob
-<img width="957" height="788" alt="12" src="https://github.com/user-attachments/assets/f9c20646-18c3-4cad-89b5-d0fffe4bb799" />
+<img width="1060" height="772" alt="vvh" src="https://github.com/user-attachments/assets/b341e2aa-ce36-429c-a254-64f9811eff4b" />
+<img width="1090" height="803" alt="capturee" src="https://github.com/user-attachments/assets/3b0d0b9b-7cbc-4460-b723-082172b0fa2a" />
+
 <img width="952" height="847" alt="11" src="https://github.com/user-attachments/assets/cee2e75b-9c26-4b96-9122-fb5d60875a36" />
 
 
